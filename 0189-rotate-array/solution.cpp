@@ -1,12 +1,17 @@
+#include<algorithm>
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) 
     {
-        k=k%nums.size();
-        reverse(nums.begin(),nums.begin()+(nums.size()-k));
+        int n = nums.size();
+        k = k % n; // To handle cases where k is larger than the size of the array
+        reverse(nums.begin(), nums.end()); // Reverse the whole array
+        reverse(nums.begin(), nums.begin() + k); // Reverse the first k elements
+        reverse(nums.begin() + k, nums.end()); 
 
-        reverse(nums.begin()+(nums.size()-k),nums.end());
-    
-        reverse(nums.begin(),nums.end());
+       for(auto i : nums)
+    {
+        cout<<i<<" ";
+    }
     }
 };
