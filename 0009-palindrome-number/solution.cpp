@@ -1,24 +1,34 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        int p;
-        int m = x;
-        int reverse = 0;
+        // int reverse = 0;
+        // int temp = x;
 
-        if(x<0)
+        if (x < 0 || (x % 10 == 0 && x != 0))
         {
             return false;
         }
-        while(x>0)
-        {
-            p = x % 10;
-             if (reverse > (INT_MAX) / 10) {
-                return false; // Overflow would happen, so not a palindrome
-            }
-            reverse = reverse * 10 + p;
-            x = x / 10;
-        }
+        // while(temp != 0)
+        // {
+        //     int digit = temp % 10;
+        //     if (reverse > (INT_MAX - digit) / 10)
+        //     {
+        //         return false;  // avoid overflow
+        //     }
+        //     reverse = reverse * 10 + digit;
+        //     temp = temp / 10;
+        // }
 
-        return m  == reverse;
+        // return x == reverse;
+
+        int reverse = 0;
+
+        while(x > reverse)
+        {
+            reverse = reverse * 10 + x % 10;
+            x = x / 10;
+        } 
+
+        return x == reverse || x == reverse / 10;
     }
 };
