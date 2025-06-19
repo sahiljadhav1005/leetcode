@@ -1,36 +1,48 @@
 class Solution {
 public:
-    int majorityElement(vector<int>& nums) 
-    {
-        int major=nums[0], count = 1;
-        for(int i=1; i<nums.size();i++){
-            if(count==0){
-                count++;
-                major=nums[i];
-            }else if(major==nums[i]){
-                count++;
-            }else count--;
-            
+    int majorityElement(vector<int>& nums) {
+
+        // hashing 
+
+        // unordered_map<int,int> res;
+        // int n = nums.size() ;
+
+        // for(auto i : nums)
+        // {
+        //     res[i]++;
+        // }
+
+        // for(auto [num , count] : res)
+        // {
+        //     if(count > n / 2)
+        //     {
+        //         return num;
+        //     }
+        // }
+
+        // return 0;
+        
+        // moore algo 
+
+        int ans = 0;
+        int freq = 0;
+
+        for(int i = 0 ; i < nums.size() ; i++)
+        {
+            if(freq == 0)
+            {
+                ans = nums[i];
+            }
+            if(ans == nums[i])
+            {
+                freq++;
+            }
+            else
+            {
+                freq--;
+            }
         }
-        return major;
+
+        return ans;
     }
 };
-
-// class Solution {
-// public:
-//     int majorityElement(vector<int>& nums) {
-//         int n = nums.size();
-//         unordered_map<int, int> m;
-        
-//         for(int i = 0; i < n; i++){
-//             m[nums[i]]++;
-//         }
-//         n = n/2;
-//         for(auto x: m){
-//             if(x.second > n){
-//                 return x.first;
-//             }
-//         }
-//         return 0;
-//     }
-// };
