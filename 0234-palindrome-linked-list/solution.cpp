@@ -11,42 +11,46 @@
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
-        if (!head || !head->next) 
+        if(!head && !head->next)
         {
             return true;
         }
 
-        // Step 1: Find middle
-        ListNode* slow = head;
-        ListNode* fast = head;
-        while (fast->next && fast->next->next) 
+        // step 1 : find the middle of list
+
+        ListNode * slow = head;
+        ListNode * fast = head;
+
+        while(fast && fast->next)
         {
             slow = slow->next;
             fast = fast->next->next;
         }
 
-        // Step 2: Reverse second half
-        ListNode* prev = nullptr;
-        ListNode* curr = slow->next;
-    
-        while (curr) 
+        // step 2 : reverse the half list
+
+        ListNode * curr = slow;
+        ListNode * prev = nullptr;
+
+        while(curr)
         {
-            ListNode* temp = curr->next;
+            ListNode * temp = curr->next;
             curr->next = prev;
             prev = curr;
             curr = temp;
         }
 
-        // Step 3: Compare both halves
-        ListNode* first = head;
-        ListNode* second = prev;
-        while (second) 
+        // step 3 : compare both half
+
+        ListNode * first = head;
+        ListNode * second = prev;
+
+        while(second)
         {
-            if (first->val != second->val)
+            if(first->val != second->val)
             {
                 return false;
             }
-
             first = first->next;
             second = second->next;
         }
