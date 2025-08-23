@@ -12,9 +12,9 @@ public:
         
         for(int i = 3 ; i <= n ; i++)
         {
-            temp = b;
-            b = a + b;
-            a = temp;
+            int temp = a + b;
+            a = b ;
+            b = temp;
         }
 
         return b;
