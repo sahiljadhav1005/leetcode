@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/employees-whose-manager-left-the-company">Employees Whose Manager Left the Company</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Table: <code>Employees</code></p>
+<p>Table: <code>Employees</code></p>
 
 <pre>
 +-------------+----------+
