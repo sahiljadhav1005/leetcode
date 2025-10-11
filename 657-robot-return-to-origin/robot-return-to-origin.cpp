@@ -23,11 +23,6 @@ public:
             }
         }
 
-        if(horz == 0 and vert == 0)
-        {
-            return true;
-        }
-
-        return false;
+        return vert == 0 && horz == 0;
     }
 };
