@@ -6,11 +6,11 @@ public:
         {
             if (n == 0)
             {
-                return 0;       // Product becomes zero
+                return 0;       
             }
             else if (n < 0)
             {
-                sign = -sign;   // Flip sign for each negative number
+                sign = -sign;   
             }
         }
         return sign;  
